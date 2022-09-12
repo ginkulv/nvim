@@ -14,7 +14,7 @@ o.list = true
 o.listchars = 'tab:→ '
 o.showbreak = "↪ "
 o.expandtab = true
-o.shell = 'pwsh'
+o.shell = 'powershell'
 o.cursorline = true
 
 g.netrw_banner = 0

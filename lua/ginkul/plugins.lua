@@ -4,7 +4,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
     command = 'source <afile> | PackerCompile',
 })
 
-return require('packer').startup(function(use)
+return require'packer'.startup(function(use)
 
     use 'wbthomason/packer.nvim'
     use 'vim-airline/vim-airline'
