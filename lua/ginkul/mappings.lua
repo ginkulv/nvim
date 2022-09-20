@@ -1,7 +1,3 @@
-local function map(m, k, v)
-    vim.keymap.set(m, k, v, { silent = true })
-end
-
 local function get_visual_selection()
   local s_start = vim.fn.getpos("'<")
   local s_end = vim.fn.getpos("'>")
@@ -30,22 +26,23 @@ function _G.search_google()
 end
 
 -- Changing size of views
-map('n', '<C-k>', '<C-w>+')
-map('n', '<C-j>', '<C-w>-')
-map('n', '<C-h>', '<C-w><')
-map('n', '<C-l>', '<C-w>>')
+vim.keymap.set('n', '<C-k>', '<C-w>+', { silent = true })
+vim.keymap.set('n', '<C-j>', '<C-w>-', { silent = true })
+vim.keymap.set('n', '<C-h>', '<C-w><', { silent = true })
+vim.keymap.set('n', '<C-l>', '<C-w>>', { silent = true })
 -- Navigating tabs
-map('n', '<Tab>', 'gt')
-map('n', '<s-Tab>', 'gT')
+vim.keymap.set('n', '<Tab>', 'gt', { silent = true })
+vim.keymap.set('n', '<s-Tab>', 'gT', { silent = true })
 -- Exit terminal mode
-map('t', '<Esc>', '<C-\\><C-N>')
+vim.keymap.set('t', '<Esc>', '<C-\\><C-N>', { silent = true })
+
+vim.keymap.set('v', '<leader>gh', ':<C-u>call v:lua.open_github()<CR>', { silent = true })
+vim.keymap.set('v', '<leader>gg', ':<C-u>call v:lua.search_google()<CR>', { silent = true })
 
 -- Plugins settings
-map('n', '<C-f>', '<cmd>Telescope find_files<cr>')
+vim.keymap.set('n', '<C-f>', '<cmd>Telescope find_files<cr>', { silent = true })
 
--- map('i', '<CR>', 'coc#pum#visible() ? coc#pum#confirm() : "\\<CR>"')
+vim.keymap.set('i', '<C-r>', 'coc#refresh()', { expr = true } )
+vim.keymap.set('i', '<CR>', 'coc#pum#visible() ? coc#pum#confirm() : "\\<CR>"', {expr = true } )
 -- map('i', '<C-space>',  ':call coc#refresh()<CR>')
 
-
-map('v', '<leader>gh', ':<C-u>call v:lua.open_github()<CR>')
-map('v', '<leader>gg', ':<C-u>call v:lua.search_google()<CR>')

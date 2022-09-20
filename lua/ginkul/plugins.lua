@@ -4,7 +4,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
     command = 'source <afile> | PackerCompile',
 })
 
-return require'packer'.startup(function(use)
+return require'packer'.startup({function(use)
 
     use 'wbthomason/packer.nvim'
     use 'vim-airline/vim-airline'
@@ -24,7 +24,14 @@ return require'packer'.startup(function(use)
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         requires = { 'nvim-lua/plenary.nvim' }
     }
-end)
+end,
+config = {
+    display = {
+        open_fn = function()
+            return require('packer.util').float( { border = 'single' })
+        end,
+    },
+}})
 
 --[[" Plugins settings
 let g:deoplete#enable_at_startup = 1

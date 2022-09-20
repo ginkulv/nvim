@@ -1,5 +1,5 @@
 require('telescope').setup {
     defaults = {
-        file_ignore_patterns = { "target", "%.git/" }
+        file_ignore_patterns = { "target", ".git/" }
     }
 }
