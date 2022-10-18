@@ -40,9 +40,4 @@ vim.keymap.set('v', '<leader>gh', ':<C-u>call v:lua.open_github()<CR>', { silent
 vim.keymap.set('v', '<leader>gg', ':<C-u>call v:lua.search_google()<CR>', { silent = true })
 
 -- Plugins settings
-vim.keymap.set('n', '<C-f>', '<cmd>Telescope find_files<cr>', { silent = true })
-
-vim.keymap.set('i', '<C-r>', 'coc#refresh()', { expr = true } )
-vim.keymap.set('i', '<CR>', 'coc#pum#visible() ? coc#pum#confirm() : "\\<CR>"', {expr = true } )
--- map('i', '<C-space>',  ':call coc#refresh()<CR>')
-
+vim.keymap.set('n', '<C-f>', '<cmd>Telescope find_files hidden=true<cr>', { silent = true })

@@ -15,11 +15,10 @@ o.listchars = 'tab:→ '
 o.showbreak = "↪ "
 o.expandtab = true
 o.shell = 'powershell'
-o.cursorline = true
+-- o.cursorline = true
 
 g.netrw_banner = 0
 g.netrw_liststyle = 3
-
 
 -- Highlight on yank
 local yankGrp = api.nvim_create_augroup("YankHighlight", { clear = true })
